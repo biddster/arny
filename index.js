@@ -42,10 +42,14 @@ async function callApi(account, region, listers, api) {
             }, listers)
         );
         const ret = outputFunc(data);
-        console.log(ret);
+        // console.log(ret);
         return ret;
     } catch (e) {
-        console.error(e);
+        if (e.message && e.message.indexOf('Inaccessible host') >= 0) {
+            console.error(e);
+        } else {
+            console.error(`${region} ${api} ${e.stack}`);
+        }
         return null;
     }
 }
