@@ -1,11 +1,58 @@
 {
-  "name": "arny",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "arny",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "aws-sdk": "^2.314.0",
+        "bluebird": "^3.5.2",
+        "ramda": "^0.25.0",
+        "require-all": "^3.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.13.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-config-prettier": "^4.0.0",
+        "eslint-plugin-import": "^2.16.0",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "prettier": "^1.16.3"
+    },
+    "eslintConfig": {
+        "env": {
+            "es6": true,
+            "node": true,
+            "mocha": true
+        },
+        "extends": [
+            "airbnb-base",
+            "prettier"
+        ],
+        "overrides": [
+            {
+                "files": [
+                    "*.js"
+                ],
+                "rules": {
+                    "no-console": "off",
+                    "func-names": "off",
+                    "max-lines-per-function": "off",
+                    "global-require": "off",
+                    "no-plusplus": "off",
+                    "no-param-reassign": "off",
+                    "no-multi-assign": "off"
+                }
+            }
+        ]
+    },
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4,
+        "printWidth": 96
+    }
 }
